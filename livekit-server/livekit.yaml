@@ -1,0 +1,41 @@
+port: 7880
+bind_addresses:
+  - ""
+
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 60000
+  use_external_ip: true
+
+redis:
+  address: redis:6379
+
+api:
+  port: 7880
+  
+keys:
+  APIyourkey: yoursecret
+
+webhook:
+  urls:
+    - http://host.docker.internal:8080/webhook
+  api_key: your_webhook_api_key
+
+room:
+  enabled_codecs:
+    - opus
+    - aac
+  max_participants: 100
+  
+turn:
+  enabled: true
+  domain: ""
+  cert_file: ""
+  key_file: ""
+  
+logging:
+  level: info
+  
+agents:
+  enabled: true
